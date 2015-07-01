@@ -172,7 +172,7 @@ abstract class ClientConnection extends ConnectionBase
 			if (localEP.getAddress().isLoopbackAddress())
 				logger.warn("try to specify the actual IP address of the local host");
 			LogManager.getManager().removeLogService(logger.getName());
-			throw new KNXException("on connect to " + serverCtrlEP + ": " + thrown.getMessage());
+			throw new KNXException("on connect to " + serverCtrlEP + ": " + thrown.getMessage(),thrown);
 		}
 
 		logger.info("wait for connect response from " + ctrlEndpt + " ...");
